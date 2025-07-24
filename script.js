@@ -1,36 +1,27 @@
 // Menü verilerini yükleyen fonksiyon
 async function menuYukle() {
-    // Menülerin ekleneceği ana container'ı seçiyoruz
     const container = document.getElementById('menu-container');
     try {
-        // menu.json dosyasını fetch ile çekiyoruz
         const res = await fetch('menu.json');
-        // Gelen cevabı JSON formatına çeviriyoruz
         const data = await res.json();
-        // Container'ın içeriğini temizliyoruz
         container.innerHTML = '';
-        // Her kategori için dönüyoruz (ör: Çorbalar, Ana Yemekler)
         Object.keys(data).forEach(kategori => {
-            // Kategori verilerini al (yeni json formatı desteği)
-            let urunler = data[kategori];
+            const kategoriObj = data[kategori];
+            let urunler = kategoriObj;
+            let sutun = 1;
             let kategoriGoster = true;
-            if (typeof urunler === 'object' && urunler.urunler) {
-                kategoriGoster = urunler.goster !== undefined ? urunler.goster : true;
-                urunler = urunler.urunler;
+            if (typeof kategoriObj === 'object' && kategoriObj.urunler) {
+                urunler = kategoriObj.urunler;
+                sutun = kategoriObj.sutun || 1;
+                kategoriGoster = kategoriObj.goster !== undefined ? kategoriObj.goster : true;
             }
-
-            // Eğer kategori gizli ise veya hiç ürün yoksa kategoriyi gösterme
             if (!kategoriGoster || !Array.isArray(urunler) || urunler.length === 0) return;
-
-            // Yeni bir section elementi oluşturuyoruz
             const section = document.createElement('section');
             section.className = 'menu-category';
-            // Kategori başlığını ekliyoruz
-            section.innerHTML = `<h2>${kategori}</h2>`;
-            // Liste modeli (arka plan fotoğraf)
+            section.innerHTML = `<h2 data-kategori-baslik="${kategori}">${kategori}</h2>`;
             const ul = document.createElement('ul');
             ul.className = 'menu-list';
-            // Kategorideki her ürün için dönüyoruz
+            ul.classList.add(`sutun-${sutun}`);
             urunler.forEach(urun => {
                 const li = document.createElement('li');
                 li.className = 'menu-list-item';
@@ -38,36 +29,33 @@ async function menuYukle() {
                     li.style.backgroundImage = `url('${urun.resim}')`;
                 }
                 let overlay = `
-                    <div class=\"menu-list-info-overlay\">
-                        <div class=\"menu-list-info-left\">
-                            <div class=\"menu-list-title\">${urun.isim}</div>
+                    <div class="menu-list-info-overlay">
+                        <div class="menu-list-info-left">
+                            <div class="menu-list-title">${urun.isim}</div>
                         </div>
-                        <div class=\"menu-list-info-right\">
-                            ${urun.kilo > 0 ? `<span class=\"menu-list-kilo\">${urun.kilo} kg</span>` : ''}
-                            ${(urun.kisiSayisi > 0 || urun.kisi > 0) ? `<span class=\"menu-list-kisi\">${urun.kisiSayisi || urun.kisi} Kişilik</span>` : ''}
-                            <span class=\"menu-list-price\">${urun.fiyat}₺</span>
+                        <div class="menu-list-info-right">
+                            ${(urun.kilo && String(urun.kilo).trim() !== '' && urun.kilo !== 'null' && urun.kilo !== null) ? `<span class="menu-list-kilo">${urun.kilo}</span>` : ''}
+                            ${(urun.kisiSayisi > 0 || urun.kisi > 0) ? `<span class="menu-list-kisi">${urun.kisiSayisi || urun.kisi} Kişilik</span>` : ''}
+                            <span class="menu-list-price">${urun.fiyat}₺</span>
                         </div>
                     </div>
                 `;
                 if (urun.goster === false) {
-                    overlay += `<div class=\"stokta-degil-filtre\"><span>Stokta değil</span></div>`;
+                    overlay += `<div class="stokta-degil-filtre"><span>Stokta değil</span></div>`;
                     li.style.position = 'relative';
                 }
                 li.innerHTML = overlay;
                 ul.appendChild(li);
             });
             section.appendChild(ul);
-            // Section'ı ana container'a ekliyoruz
             container.appendChild(section);
         });
     } catch (e) {
-        // Eğer bir hata olursa kullanıcıya hata mesajı gösteriyoruz
         container.innerHTML = '<p>Menü yüklenemedi.</p>';
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Sayfa yüklendiğinde menüyü getir
     menuYukle();
 
     // Menüyü Keşfet butonu için yumuşak kaydırma
@@ -83,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const menuRect = menuContainer.getBoundingClientRect().top;
                 const menuPosition = menuRect - bodyRect;
                 const offsetPosition = menuPosition - navHeight;
-
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
@@ -118,3 +105,35 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 });
+
+// Header slider görsel sayısına göre genişlik ve animasyon ayarı
+(function() {
+    const slider = document.querySelector('.header-bg-slider');
+    const imgs = document.querySelectorAll('.header-bg-slider .header-bg-img');
+    if (!slider || imgs.length < 2) return;
+    const count = imgs.length;
+    const imgWidth = 100 / count;
+    imgs.forEach(img => img.style.width = imgWidth + '%');
+    slider.style.width = (count * 100) + '%';
+    const stay = 3;
+    const transition = 1.5;
+    const duration = count * (stay + transition);
+    slider.style.animation = `header-slide-loop ${duration}s cubic-bezier(0.77,0,0.18,1) infinite`;
+    let keyframes = `@keyframes header-slide-loop {\n`;
+    let percent = 0;
+    for (let i = 0; i < count; i++) {
+        const move = (-i * 100 / count).toFixed(4);
+        const nextMove = (-(i+1) * 100 / count).toFixed(4);
+        const stayPercent = (stay / duration) * 100;
+        const transPercent = (transition / duration) * 100;
+        keyframes += `  ${percent.toFixed(4)}% { transform: translateX(${move}%); }\n`;
+        percent += stayPercent;
+        keyframes += `  ${percent.toFixed(4)}% { transform: translateX(${move}%); }\n`;
+        percent += transPercent;
+        keyframes += `  ${percent.toFixed(4)}% { transform: translateX(${nextMove}%); }\n`;
+    }
+    keyframes += `  100% { transform: translateX(-${((count-1)*100/count).toFixed(4)}%); }\n}`;
+    const style = document.createElement('style');
+    style.innerHTML = keyframes;
+    document.head.appendChild(style);
+})();

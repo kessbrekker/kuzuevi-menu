@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menü Kontrol Paneli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #b22222;
+            margin-top: 2.5rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2.1rem;
+            letter-spacing: 1px;
+        }
+        .menu-table {
+            width: 96%;
+            max-width: 1050px;
+            margin: 2.2rem auto 2.5rem auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(178,34,34,0.08);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        th, td {
+            border: none;
+            padding: 1.05rem 0.7rem;
+            text-align: left;
+            font-size: 1.04rem;
+        }
+        th {
+            background: #f3e9e1;
+            color: #b22222;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.08rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        tr {
+            transition: background 0.18s;
+        }
+        tr:not(:first-child):hover {
+            background: #f9f3f3;
+        }
+        tr:nth-child(even) td {
+            background: #faf7f2;
+        }
+        .img-preview {
+            width: 70px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 7px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border: 1.5px solid #f3e9e1;
+        }
+        .kategori-baslik {
+            background: #b22222;
+            color: #fff;
+            font-weight: bold;
+            text-align: left;
+            font-size: 1.13rem;
+            letter-spacing: 0.5px;
+            padding: 1.1rem 0.7rem 1.1rem 1.2rem;
+            border-radius: 12px 12px 0 0;
+        }
+        .kategori-baslik-ic {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .td-duzenle button, #tumunu-kaydet-btn {
+            padding: 0.5rem 1.2rem;
+            font-size: 1.04rem;
+            background: #b22222;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-family: 'Montserrat', Arial, sans-serif;
+            transition: background 0.18s, box-shadow 0.18s;
+            box-shadow: 0 2px 8px rgba(178,34,34,0.08);
+        }
+        .td-duzenle button:hover, #tumunu-kaydet-btn:hover {
+            background: #a01c1c;
+            box-shadow: 0 4px 16px rgba(178,34,34,0.13);
+        }
+        #tumunu-kaydet-btn {
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        #kaydet-bilgi {
+            margin-left: 1rem;
+            color: #b22222;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 0.35rem 0.5rem;
+            font-size: 1.01rem;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 6px;
+            background: #faf7f2;
+            font-family: 'Roboto', Arial, sans-serif;
+            transition: border 0.18s;
+        }
+        input[type="text"]:focus, input[type="number"]:focus {
+            border: 1.5px solid #b22222;
+            outline: none;
+            background: #fff;
+        }
+        .kategori-arti-btn {
+            background: #b22222;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            cursor: pointer;
+            margin-left: 10px;
+            box-shadow: 0 2px 8px rgba(178,34,34,0.10);
+            transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+        }
+        .kategori-arti-btn:hover {
+            background: #a01c1c;
+            transform: scale(1.13);
+            box-shadow: 0 4px 16px rgba(178,34,34,0.18);
+        }
+        @media (max-width: 900px) {
+            .menu-table { font-size: 0.97rem; }
+            th, td { padding: 0.7rem 0.3rem; }
+            .img-preview { width: 48px; height: 32px; }
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.3rem; }
+            .menu-table { font-size: 0.93rem; }
+            th, td { padding: 0.5rem 0.15rem; }
+            .img-preview { width: 36px; height: 24px; }
+            .kategori-baslik { font-size: 1rem; padding: 0.7rem 0.3rem 0.7rem 0.7rem; }
+        }
+        #kaydet-btn-container {
+            position: fixed;
+            right: 2.2vw;
+            bottom: 2.2vw;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        #tumunu-kaydet-btn {
+            padding: 0.7rem 1.7rem;
+            font-size: 1.13rem;
+            background: #b22222;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Montserrat', Arial, sans-serif;
+            box-shadow: 0 2px 12px rgba(178,34,34,0.13);
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+            transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+        }
+        #tumunu-kaydet-btn:hover {
+            background: #a01c1c;
+            box-shadow: 0 4px 24px rgba(178,34,34,0.18);
+            transform: scale(1.04);
+        }
+        #kaydet-bilgi {
+            margin-top: 0.3rem;
+            color: #b22222;
+            font-weight: 500;
+            font-size: 1.05rem;
+            background: #fff;
+            border-radius: 7px;
+            box-shadow: 0 2px 8px rgba(178,34,34,0.08);
+            padding: 0.4rem 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Menü Kontrol Paneli</h1>
+    <div id="kaydet-btn-container">
+        <button id="tumunu-kaydet-btn">Tümünü Kaydet</button>
+        <span id="kaydet-bilgi"></span>
+    </div>
+    <div id="menu-table-container">
+        <p>Menü verileri yükleniyor...</p>
+    </div>
+    <script>
+    // Menü verilerini tablo olarak gösteren fonksiyon
+    async function menuKontrol() {
+        const container = document.getElementById('menu-table-container');
+        try {
+            const res = await fetch('menu.json');
+            const data = await res.json();
+            // Orijinal menu.json'u window'a kaydet (sutun için)
+            window.menuJsonData = data;
+            let html = '';
+            Object.keys(data).forEach(kategori => {
+                const kategoriObj = data[kategori];
+                const urunler = kategoriObj.urunler || [];
+                html += `<table class='menu-table'>`;
+                html += `<tr><td colspan='7' class='kategori-baslik'><div class='kategori-baslik-ic'>${kategori}<button class='kategori-arti-btn'>+</button></div></td></tr>`;
+            html += `<tr><th></th><th>Ürün Adı</th><th>Fiyat</th><th>Kişi Sayısı</th><th>Kilo</th><th>Resim</th><th>Düzenle</th></tr>`;
+                urunler.forEach((urun, urunIndex, arr) => {
+                    const goster = urun.goster !== undefined ? urun.goster : true;
+                    const gosterClass = goster ? 'goster-aktif' : 'goster-pasif';
+                    const gosterTitle = goster ? 'Menüde Gösteriliyor' : 'Menüde Gizli';
+                    const gosterIcon = goster ? '👁️' : '🙈';
+                    html += `<tr data-kategori='${kategori}' data-index='${urunIndex}' data-goster='${goster}'>`;
+                    html += `<td class='td-sira'>
+                        <button class='sira-yukari-btn' title='Yukarı Taşı' ${urunIndex === 0 ? 'disabled' : ''}>▲</button>
+                        <button class='sira-asagi-btn' title='Aşağı Taşı' ${urunIndex === arr.length-1 ? 'disabled' : ''}>▼</button>
+                    </td>`;
+                    html += `<td class='td-isim'>${urun.isim}</td>`;
+                    html += `<td class='td-fiyat'>${urun.fiyat}₺</td>`;
+                    html += `<td class='td-kisi'>${urun.kisiSayisi !== undefined ? urun.kisiSayisi : ''}</td>`;
+                    html += `<td class='td-kilo'>${urun.kilo !== undefined ? urun.kilo : ''}</td>`;
+                    html += `<td class='td-resim'>${urun.resim ? `<img src='${urun.resim}' class='img-preview' alt='${urun.isim}'>` : '-'}</td>`;
+                    html += `<td class='td-duzenle'><button class='duzenle-btn'>🖊️</button> <button class='goster-btn ${gosterClass}' title='${gosterTitle}'>${gosterIcon}</button> <button class='sil-btn' title='Sil'>🗑️</button></td>`;
+                    html += `</tr>`;
+                });
+                html += `</table>`;
+            });
+            container.innerHTML = html;
+        } catch (e) {
+            container.innerHTML = '<p>Menü verileri yüklenemedi.</p>';
+        }
+    }
+    menuKontrol();
+
+    // Tabloya düzenleme işlevi ekle
+    document.addEventListener('click', function(e) {
+        // Sıra yukarı/aşağı butonları
+        if (e.target.classList.contains('sira-yukari-btn') || e.target.classList.contains('sira-asagi-btn')) {
+            const tr = e.target.closest('tr');
+            const kategori = tr.getAttribute('data-kategori');
+            const index = parseInt(tr.getAttribute('data-index'));
+            const table = tr.closest('table');
+            const rows = Array.from(table.querySelectorAll('tr')).filter(r => r.querySelector('.td-isim'));
+            if (e.target.classList.contains('sira-yukari-btn') && index > 0) {
+                // Yukarı taşı
+                const prevTr = rows[index-1];
+                table.tBodies[0].insertBefore(tr, prevTr);
+            } else if (e.target.classList.contains('sira-asagi-btn') && index < rows.length-1) {
+                // Aşağı taşı
+                const nextTr = rows[index+1].nextSibling;
+                table.tBodies[0].insertBefore(tr, nextTr);
+            }
+            // Tüm indexleri güncelle
+            const newRows = Array.from(table.querySelectorAll('tr')).filter(r => r.querySelector('.td-isim'));
+            newRows.forEach((row, i) => {
+                row.setAttribute('data-index', i);
+            });
+            // Ok butonlarının aktif/pasif durumunu güncelle
+            updateSiraOkButtons(table);
+            return;
+        }
+
+        // Sıra oklarının aktif/pasif (disabled) durumunu güncelleyen fonksiyon
+        function updateSiraOkButtons(table) {
+            const rows = Array.from(table.querySelectorAll('tr')).filter(r => r.querySelector('.td-isim'));
+            rows.forEach((row, i) => {
+                const tdSira = row.querySelector('.td-sira');
+                if (!tdSira) return;
+                const yukariBtn = tdSira.querySelector('.sira-yukari-btn');
+                const asagiBtn = tdSira.querySelector('.sira-asagi-btn');
+                if (yukariBtn) yukariBtn.disabled = (i === 0);
+                if (asagiBtn) asagiBtn.disabled = (i === rows.length-1);
+            });
+        }
+        // Düzenle butonuna tıklanınca:
+        if (e.target.classList.contains('duzenle-btn')) {
+            const tr = e.target.closest('tr');
+            const tdSira = tr.querySelector('.td-sira');
+            const tdIsim = tr.querySelector('.td-isim');
+            const tdFiyat = tr.querySelector('.td-fiyat');
+            const tdKisi = tr.querySelector('.td-kisi');
+            const tdKilo = tr.querySelector('.td-kilo');
+            const tdResim = tr.querySelector('.td-resim');
+            const tdDuzenle = tr.querySelector('.td-duzenle');
+            // Eski değerleri sakla
+            const eski = {
+                isim: tdIsim.textContent,
+                fiyat: tdFiyat.textContent.replace('₺','').trim(),
+                kisi: tdKisi.textContent.trim(),
+                kilo: tdKilo.textContent.trim(),
+                resim: tdResim.querySelector('img') ? tdResim.querySelector('img').src : ''
+            };
+            // Sıra oklarını düzenleme modunda da göster
+            const index = parseInt(tr.getAttribute('data-index'));
+            const table = tr.closest('table');
+            const rows = Array.from(table.querySelectorAll('tr')).filter(r => r.querySelector('.td-isim'));
+            tdSira.innerHTML = `
+                <button class='sira-yukari-btn' title='Yukarı Taşı' ${index === 0 ? 'disabled' : ''}>▲</button>
+                <button class='sira-asagi-btn' title='Aşağı Taşı' ${index === rows.length-1 ? 'disabled' : ''}>▼</button>
+            `;
+            // Inputlara çevir
+            tdIsim.innerHTML = `<input type='text' value='${eski.isim}'>`;
+            tdFiyat.innerHTML = `<input type='number' value='${eski.fiyat}' min='0'> ₺`;
+            tdKisi.innerHTML = `<input type='number' value='${eski.kisi}' min='1' step='1'>`;
+            tdKilo.innerHTML = `<input type='text' value='${eski.kilo}'>`;
+            tdResim.innerHTML = `<input type='file' accept='image/*'> <div class='img-preview-box'>${eski.resim ? `<img src='${eski.resim}' class='img-preview' alt='${eski.isim}'>` : '-'}</div>`;
+            tdDuzenle.innerHTML = `<button class='kaydet-btn'>Kaydet</button> <button class='iptal-btn'>İptal</button>`;
+            // Dosya seçilince önizleme göster ve img klasörüne kopyala
+            const fileInput = tdResim.querySelector('input[type="file"]');
+            fileInput.onchange = function(ev) {
+                const file = ev.target.files[0];
+                const previewBox = tdResim.querySelector('.img-preview-box');
+                if (file) {
+                    // Sadece dosya adını al ve başına img/ ekle
+                    const dosyaYolu = 'img/yemekler/' + file.name;
+                    previewBox.innerHTML = `<img src='${dosyaYolu}' class='img-preview' alt='Önizleme'>`;
+                    previewBox.setAttribute('data-resim-yolu', dosyaYolu);
+                } else {
+                    previewBox.innerHTML = eski.resim ? `<img src='${eski.resim}' class='img-preview' alt='${eski.isim}'>` : '-';
+                }
+            };
+            // İptal ve Kaydet işlevleri
+            tdDuzenle.querySelector('.iptal-btn').onclick = function() {
+                // Sıra oklarını da eski haline getir
+                tdSira.innerHTML = `
+                    <button class='sira-yukari-btn' title='Yukarı Taşı' ${index === 0 ? 'disabled' : ''}>▲</button>
+                    <button class='sira-asagi-btn' title='Aşağı Taşı' ${index === rows.length-1 ? 'disabled' : ''}>▼</button>
+                `;
+                tdIsim.textContent = eski.isim;
+                tdFiyat.textContent = eski.fiyat + '₺';
+                tdKisi.textContent = eski.kisi;
+                tdKilo.textContent = eski.kilo;
+                tdResim.innerHTML = eski.resim ? `<img src='${eski.resim}' class='img-preview' alt='${eski.isim}'>` : '-';
+                // Butonları tam olarak geri getir
+                const goster = tr.getAttribute('data-goster') === 'true';
+                const gosterClass = goster ? 'goster-aktif' : 'goster-pasif';
+                const gosterTitle = goster ? 'Menüde Gösteriliyor' : 'Menüde Gizli';
+                const gosterIcon = goster ? '👁️' : '🙈';
+                tdDuzenle.innerHTML = `<button class='duzenle-btn'>🖊️</button> <button class='goster-btn ${gosterClass}' title='${gosterTitle}'>${gosterIcon}</button> <button class='sil-btn' title='Sil'>🗑️</button>`;
+            };
+            tdDuzenle.querySelector('.kaydet-btn').onclick = function() {
+                const yeniIsim = tdIsim.querySelector('input').value;
+                const yeniFiyat = tdFiyat.querySelector('input').value;
+                const yeniKisi = tdKisi.querySelector('input').value;
+                const yeniKilo = tdKilo.querySelector('input').value;
+                // Resim yolu önizleme kutusundan alınacak
+                const previewBox = tdResim.querySelector('.img-preview-box');
+                let yeniResim = eski.resim;
+                if (previewBox && previewBox.getAttribute('data-resim-yolu')) {
+                    yeniResim = previewBox.getAttribute('data-resim-yolu');
+                }
+                tdIsim.textContent = yeniIsim;
+                tdFiyat.textContent = yeniFiyat + '₺';
+                tdKisi.textContent = yeniKisi;
+                tdKilo.textContent = yeniKilo;
+                tdResim.innerHTML = yeniResim ? `<img src='${yeniResim}' class='img-preview' alt='${yeniIsim}'>` : '-';
+                // Sıra oklarını da eski haline getir
+                tdSira.innerHTML = `
+                    <button class='sira-yukari-btn' title='Yukarı Taşı' ${index === 0 ? 'disabled' : ''}>▲</button>
+                    <button class='sira-asagi-btn' title='Aşağı Taşı' ${index === rows.length-1 ? 'disabled' : ''}>▼</button>
+                `;
+                // Butonları tam olarak geri getir
+                const tr = tdDuzenle.closest('tr');
+                const goster = tr.getAttribute('data-goster') === 'true';
+                const gosterClass = goster ? 'goster-aktif' : 'goster-pasif';
+                const gosterTitle = goster ? 'Menüde Gösteriliyor' : 'Menüde Gizli';
+                const gosterIcon = goster ? '👁️' : '🙈';
+                tdDuzenle.innerHTML = `<button class='duzenle-btn'>🖊️</button> <button class='goster-btn ${gosterClass}' title='${gosterTitle}'>${gosterIcon}</button> <button class='sil-btn' title='Sil'>🗑️</button>`;
+            };
+        }
+        // Sil butonuna tıklanınca satırı sil
+        if (e.target.classList.contains('sil-btn')) {
+            const tr = e.target.closest('tr');
+            tr.remove();
+        }
+        // Göz butonuna tıklanınca ürünün menüde görünüp görünmeyeceği ayarlanır
+        if (e.target.classList.contains('goster-btn')) {
+            const tr = e.target.closest('tr');
+            // Eğer sadece resim modalı açmak istiyorsak, img'ye tıklanırsa modal açılır
+            if (e.target.classList.contains('goster-aktif') || e.target.classList.contains('goster-pasif')) {
+                // goster değerini tersine çevir
+                let goster = tr.getAttribute('data-goster') === 'true';
+                goster = !goster;
+                tr.setAttribute('data-goster', goster);
+                // Simgeyi güncelle
+                if (goster) {
+                    e.target.textContent = '👁️';
+                    e.target.classList.remove('goster-pasif');
+                    e.target.classList.add('goster-aktif');
+                    e.target.title = 'Menüde Gösteriliyor';
+                } else {
+                    e.target.textContent = '🙈';
+                    e.target.classList.remove('goster-aktif');
+                    e.target.classList.add('goster-pasif');
+                    e.target.title = 'Menüde Gizli';
+                }
+                return;
+            }
+            // Eski davranış: resim modalı aç
+            const img = tr.querySelector('.td-resim img');
+            if (!img) return;
+            let modal = document.getElementById('resim-modal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'resim-modal';
+                modal.style.position = 'fixed';
+                modal.style.top = '0';
+                modal.style.left = '0';
+                modal.style.width = '100vw';
+                modal.style.height = '100vh';
+                modal.style.background = 'rgba(0,0,0,0.6)';
+                modal.style.display = 'flex';
+                modal.style.alignItems = 'center';
+                modal.style.justifyContent = 'center';
+                modal.style.zIndex = '9999';
+                modal.innerHTML = `<div style='background:#fff; padding:24px 24px 12px 24px; border-radius:12px; box-shadow:0 4px 32px rgba(0,0,0,0.18); position:relative; max-width:90vw; max-height:90vh;'>
+                    <img id='modal-img' src='' alt='Büyük Resim' style='max-width:70vw; max-height:70vh; display:block; margin:auto; border-radius:10px; box-shadow:0 2px 16px rgba(0,0,0,0.13);'>
+                    <button id='modal-kapat' style='position:absolute; top:8px; right:8px; background:#b22222; color:#fff; border:none; border-radius:50%; width:32px; height:32px; font-size:1.3rem; cursor:pointer;'>×</button>
+                </div>`;
+                document.body.appendChild(modal);
+                modal.querySelector('#modal-kapat').onclick = function() {
+                    modal.style.display = 'none';
+                };
+                modal.onclick = function(ev) {
+                    if (ev.target === modal) modal.style.display = 'none';
+                };
+            }
+            modal.querySelector('#modal-img').src = img.src;
+            modal.style.display = 'flex';
+        }
+        // Artı butonuna tıklanınca yeni ürün satırı ekle
+        if (e.target.classList.contains('kategori-arti-btn')) {
+            const kategori = e.target.getAttribute('data-kategori');
+            const table = e.target.closest('table');
+            const tbody = table.tBodies[0] || table;
+            // Zaten eklenmiş bir yeni satır varsa tekrar ekleme
+            if (tbody.querySelector('.yeni-urun-satir')) return;
+            const newRow = document.createElement('tr');
+            newRow.className = 'yeni-urun-satir';
+            // Oklar: yeni ürün her zaman listenin sonunda olacağı için yukarı butonu aktif (en az 1 ürün varsa), aşağı butonu disabled
+            const tableRows = tbody.querySelectorAll('tr');
+            const urunRows = Array.from(tableRows).filter(r => r.querySelector('.td-isim') || r.classList.contains('yeni-urun-satir'));
+            const yukariDisabled = urunRows.length > 1 ? '' : 'disabled';
+            newRow.innerHTML = `
+                <td class='td-sira'>
+                    <button class='sira-yukari-btn' title='Yukarı Taşı' ${yukariDisabled}>▲</button>
+                    <button class='sira-asagi-btn' title='Aşağı Taşı' disabled>▼</button>
+                </td>
+                <td><input type='text' placeholder='Ürün adı'></td>
+                <td><input type='number' placeholder='Fiyat' min='0'> ₺</td>
+                <td><input type='number' placeholder='Kişi' min='1' step='1'></td>
+                <td><input type='text' placeholder='Kilo'></td>
+                <td><input type='file' accept='image/*'> <div class='img-preview-box'>-</div></td>
+                <td><button class='yeni-kaydet-btn td-duzenle button'>Kaydet</button> <button class='yeni-iptal-btn td-duzenle button'>İptal</button></td>
+            `;
+            tbody.appendChild(newRow);
+            const fileInput = newRow.querySelector('input[type="file"]');
+            const previewBox = newRow.querySelector('.img-preview-box');
+            fileInput.onchange = function(ev) {
+                const file = ev.target.files[0];
+                if (file) {
+                    // Sadece dosya adını al ve başına img/ ekle
+                    const dosyaYolu = 'img/yemekler/' + file.name;
+                    previewBox.innerHTML = `<img src='${dosyaYolu}' class='img-preview' alt='Önizleme'>`;
+                    previewBox.setAttribute('data-resim-yolu', dosyaYolu);
+                } else {
+                    previewBox.innerHTML = '-';
+                }
+            };
+            newRow.querySelector('.yeni-iptal-btn').onclick = function() {
+                newRow.remove();
+            };
+            newRow.querySelector('.yeni-kaydet-btn').onclick = function() {
+                const tds = newRow.querySelectorAll('td');
+                // Sıralama: 0:td-sira, 1:isim, 2:fiyat, 3:kisi, 4:kilo, 5:resim, 6:butonlar
+                const isim = tds[1].querySelector('input').value.trim();
+                const fiyat = tds[2].querySelector('input').value.trim();
+                const kisi = tds[3].querySelector('input').value.trim();
+                const kilo = tds[4].querySelector('input').value.trim();
+                const previewBox = tds[5].querySelector('.img-preview-box');
+                const resim = previewBox.getAttribute('data-resim-yolu') || '';
+                // Yeni satırı normal ürün satırı gibi oluştur
+                // Tabloyu bul ve kaç ürün satırı olduğunu bul
+                const table = newRow.closest('table');
+                const rows = Array.from(table.querySelectorAll('tr')).filter(r => r.querySelector('.td-isim'));
+                const index = rows.length; // yeni ürün en sona ekleniyor
+                // Ok butonları için index ve toplam satır sayısı
+                const yukariDisabled = index === 0 ? 'disabled' : '';
+                const asagiDisabled = 'disabled'; // yeni ürün en sonda
+                // Varsayılan olarak gösterilsin
+                const goster = true;
+                const gosterClass = goster ? 'goster-aktif' : 'goster-pasif';
+                const gosterTitle = goster ? 'Menüde Gösteriliyor' : 'Menüde Gizli';
+                const gosterIcon = goster ? '👁️' : '🙈';
+                newRow.innerHTML = `
+                    <td class='td-sira'>
+                        <button class='sira-yukari-btn' title='Yukarı Taşı' ${yukariDisabled}>▲</button>
+                        <button class='sira-asagi-btn' title='Aşağı Taşı' ${asagiDisabled}>▼</button>
+                    </td>
+                    <td class='td-isim'>${isim}</td>
+                    <td class='td-fiyat'>${fiyat}₺</td>
+                    <td class='td-kisi'>${kisi}</td>
+                    <td class='td-kilo'>${kilo}</td>
+                    <td class='td-resim'>${resim ? `<img src='${resim}' class='img-preview' alt='${isim}'>` : '-'}</td>
+                    <td class='td-duzenle'>
+                        <button class='duzenle-btn'>🖊️</button> 
+                        <button class='goster-btn ${gosterClass}' title='${gosterTitle}'>${gosterIcon}</button> 
+                        <button class='sil-btn' title='Sil'>🗑️</button>
+                    </td>
+                `;
+                // data-index ve data-goster attribute'larını da ekle
+                newRow.setAttribute('data-index', index);
+                newRow.setAttribute('data-goster', goster);
+                // Ok butonlarının durumunu güncelle
+                updateSiraOkButtons(table);
+            };
+        }
+    });
+
+    // Tümünü Kaydet butonuna tıklanınca ekrandaki verileri toplayıp backend'e gönder
+    document.getElementById('tumunu-kaydet-btn').onclick = async function() {
+        const bilgi = document.getElementById('kaydet-bilgi');
+        bilgi.textContent = '';
+        // Tabloyu tara ve güncel menü verisini oluştur (goster alanı dahil)
+        const tables = document.querySelectorAll('.menu-table');
+        const menuData = {};
+        tables.forEach(table => {
+            const kategori = table.querySelector('.kategori-baslik-ic').firstChild.textContent.trim();
+            // Orijinal kategori objesini bul (sutun sayısı için)
+            let orijinalKategoriObj = null;
+            if (window.menuJsonData && window.menuJsonData[kategori]) {
+                orijinalKategoriObj = window.menuJsonData[kategori];
+            }
+            let sutun = 1;
+            if (orijinalKategoriObj && orijinalKategoriObj.sutun) {
+                sutun = orijinalKategoriObj.sutun;
+            }
+            // Sadece gerçek ürün satırlarını seç (yeni ürün ekleme satırı ve başlıklar hariç)
+            const rows = Array.from(table.querySelectorAll('tr')).filter(tr => tr.querySelector('.td-isim'));
+            const urunler = [];
+            rows.forEach(tr => {
+                const tds = tr.querySelectorAll('td');
+                if (tds.length < 6) return;
+                const isim = tds[1].querySelector('input') ? tds[1].querySelector('input').value : tds[1].textContent;
+                let fiyat = tds[2].querySelector('input') ? tds[2].querySelector('input').value : tds[2].textContent;
+                fiyat = fiyat.replace('₺','').trim();
+                const kisiSayisi = tds[3].querySelector('input') ? tds[3].querySelector('input').value : tds[3].textContent;
+                const kilo = tds[4].querySelector('input') ? tds[4].querySelector('input').value : tds[4].textContent;
+                let resim = '';
+                // Eğer img-preview-box varsa ve data-resim-yolu atanmışsa onu kullan
+                const previewBox = tds[5].querySelector('.img-preview-box');
+                if (previewBox && previewBox.getAttribute('data-resim-yolu')) {
+                    resim = previewBox.getAttribute('data-resim-yolu');
+                } else {
+                    resim = tds[5].querySelector('img') ? tds[5].querySelector('img').getAttribute('src') : '';
+                }
+                // Eğer resim yolu http://localhost:3000/ ile başlıyorsa başını kaldır
+                if (resim && resim.startsWith('http://localhost:3000/')) {
+                    resim = resim.replace('http://localhost:3000/', '');
+                }
+                // goster değeri satırdan alınır (true/false)
+                let goster = true;
+                if (tr.hasAttribute('data-goster')) {
+                    goster = tr.getAttribute('data-goster') === 'true';
+                }
+                // Fiyatı sayı olarak kaydet, diğer alanları olduğu gibi bırak
+                urunler.push({isim, fiyat: Number(fiyat), kisiSayisi: kisiSayisi === '' ? null : kisiSayisi, kilo: kilo === '' ? null : kilo, resim, goster});
+            });
+            menuData[kategori] = { sutun, urunler };
+        });
+        // Backend'e gönder
+        try {
+            const res = await fetch('http://localhost:3000/menu-update', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(menuData)
+            });
+            const result = await res.json();
+            if (result.success) {
+                bilgi.textContent = 'Menü başarıyla kaydedildi!';
+                setTimeout(function() { location.reload(); }, 700);
+            } else {
+                bilgi.textContent = 'Kaydetme başarısız.';
+            }
+        } catch (e) {
+            bilgi.textContent = 'Sunucuya bağlanılamadı!';
+        }
+    };
+    </script>
+</body>
+</html>

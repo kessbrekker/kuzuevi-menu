@@ -32,10 +32,8 @@ body {
     font-family: 'Lora', serif;
 }
 header {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/indoor.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: none;
+    position: relative;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -44,8 +42,27 @@ header {
     text-align: center;
     padding: 0 20px;
     color: white;
-    position: relative;
+    overflow: hidden;
 }
+
+.header-bg-slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    z-index: 0;
+    /* width ve animation JS ile ayarlanacak */
+}
+.header-bg-img {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s;
+    /* width JS ile ayarlanacak */
+}
+/* Animasyon keyframes JS ile eklenecek */
 header::after {
     content: '';
     position: absolute;
@@ -58,7 +75,6 @@ header::after {
 header * { z-index: 1; }
 .logo {
     font-size: 3rem;
-    margin-bottom: 1rem;
     color: var(--gold-color);
     font-weight: 700;
 }
@@ -131,8 +147,10 @@ nav {
 }
 .container {
     max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
+    margin: 0px auto;
+    padding: 30px 20px;
+    position: relative;
+    background-color: white;
 }
 h2 {
     text-align: center;
@@ -224,7 +242,7 @@ footer {
     color: white;
     text-align: center;
     padding: 40px 20px;
-    margin-top: 50px;
+    position: relative;
 }
 .footer-content {
     max-width: 1200px;
@@ -289,11 +307,27 @@ footer {
     object-fit: cover;
     border: 3px solid var(--gold-color);
 }
+/* Menü sütunları için dinamik grid */
 .menu-list {
     list-style: none;
     margin: 0;
     padding: 0;
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+.menu-list.sutun-1 {
+    grid-template-columns: 1fr;
+}
+.menu-list.sutun-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.menu-list.sutun-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.menu-list.sutun-4 {
+    grid-template-columns: repeat(4, 1fr);
 }
 .menu-list-item {
     position: relative;

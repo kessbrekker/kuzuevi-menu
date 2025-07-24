@@ -1,74 +1,247 @@
 {
-  "Çorbalar": [
-  ],
-  "Ana Yemekler": [
-    {
-      "isim": "Karayaka Kuzu Pirzola",
-      "fiyat": 1200,
-      "kisiSayisi": 4,
-      "kilo": 1,
-      "resim": "http://localhost:3000/img/yemekler/kuzu.jpg",
-      "goster": true
-    },
-    {
-      "isim": "Tavuk Pirzola",
-      "fiyat": 600,
-      "kisiSayisi": 4,
-      "kilo": 1,
-      "resim": "http://localhost:3000/img/yemekler/tavuk.jpg",
-      "goster": true
-    },
-    {
-      "isim": "Karışık",
-      "fiyat": 1100,
-      "kisiSayisi": 4,
-      "kilo": 1,
-      "resim": "",
-      "goster": true
-    },
-    {
-      "isim": "Köfte",
-      "fiyat": 1000,
-      "kisiSayisi": 4,
-      "kilo": 1,
-      "resim": "img/yemekler/kofte.jpg",
-      "goster": true
-    },
-    {
-      "isim": "Tavuk Kanat",
-      "fiyat": 700,
-      "kisiSayisi": 4,
-      "kilo": 1,
-      "resim": "",
-      "goster": true
-    }
-  ],
-  "Tatlılar": [
-    {
-      "isim": "Hamsiköy Sütlacı",
-      "fiyat": 100,
-      "kisiSayisi": 0,
-      "kilo": 0,
-      "resim": "img/yemekler/sutlac.jpg",
-      "goster": true
-    },
-    {
-      "isim": "Kadayıf Sarma",
-      "fiyat": 100,
-      "kisiSayisi": 0,
-      "kilo": 0,
-      "resim": "img/yemekler/sarma.jpg",
-      "goster": true
-    }
-  ],
-  "İçecekler": [
-    {
-      "isim": "Ayran",
-      "fiyat": 20,
-      "kisiSayisi": 0,
-      "kilo": 0,
-      "resim": "img/mercimek.jpg",
-      "goster": true
-    }
-  ]
+  "Çorbalar": {
+    "sutun": 1,
+    "urunler": []
+  },
+  "Ana Yemekler (Kilogram)": {
+    "sutun": 1,
+    "urunler": [
+      {
+        "isim": "Karayaka Kuzu Pirzola",
+        "fiyat": 1200,
+        "kisiSayisi": "0",
+        "kilo": "1 Kilogram",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Karışık",
+        "fiyat": 1100,
+        "kisiSayisi": "0",
+        "kilo": "1 Kilogram",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Köfte",
+        "fiyat": 1000,
+        "kisiSayisi": "0",
+        "kilo": "1 Kilogram",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Sucuk",
+        "fiyat": 700,
+        "kisiSayisi": "null",
+        "kilo": "1 Kilogram",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Tavuk Kanat",
+        "fiyat": 700,
+        "kisiSayisi": "0",
+        "kilo": "1 Kilogram",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Tavuk Pirzola",
+        "fiyat": 600,
+        "kisiSayisi": "0",
+        "kilo": "1 Kilogram",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      }
+    ]
+  },
+  "Ana Yemekler (Porsiyon)": {
+    "sutun": 1,
+    "urunler": [
+      {
+        "isim": "Karayaka Kuzu Pirzola",
+        "fiyat": 400,
+        "kisiSayisi": "0",
+        "kilo": "1 Porsiyon",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Karışık",
+        "fiyat": 350,
+        "kisiSayisi": "0",
+        "kilo": "1 Porsiyon",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Köfte",
+        "fiyat": 300,
+        "kisiSayisi": "0",
+        "kilo": "1 Porsiyon",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Sucuk",
+        "fiyat": 300,
+        "kisiSayisi": "null",
+        "kilo": "1 Porsiyon",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Tavuk Kanat",
+        "fiyat": 275,
+        "kisiSayisi": "0",
+        "kilo": "1 Porsiyon",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Tavuk Pirzola",
+        "fiyat": 250,
+        "kisiSayisi": "0",
+        "kilo": "1 Porsiyon",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      }
+    ]
+  },
+  "Tatlılar": {
+    "sutun": 1,
+    "urunler": [
+      {
+        "isim": "Hamsiköy Sütlacı",
+        "fiyat": 100,
+        "kisiSayisi": null,
+        "kilo": null,
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Kadayıf Sarma",
+        "fiyat": 100,
+        "kisiSayisi": null,
+        "kilo": null,
+        "resim": "img/yemekler/sarma.jpg",
+        "goster": false
+      }
+    ]
+  },
+  "Semaver": {
+    "sutun": 1,
+    "urunler": [
+      {
+        "isim": "Büyük Boy Semaver",
+        "fiyat": 200,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Orta Boy Semaver",
+        "fiyat": 150,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Küçük Boy Semaver",
+        "fiyat": 100,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      }
+    ]
+  },
+  "İçecekler": {
+    "sutun": 2,
+    "urunler": [
+      {
+        "isim": "Büyük Sürahi Ayran",
+        "fiyat": 120,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Küçük Sürahi Ayran",
+        "fiyat": 60,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Kapalı Ayran",
+        "fiyat": 25,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Kutu Kola/Fanta",
+        "fiyat": 80,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Şişe Kola/Fanta",
+        "fiyat": 40,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "1 LT Kola/Fanta",
+        "fiyat": 80,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Meyve Suyu/İcetea",
+        "fiyat": 50,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Meyveli/Sade Soda",
+        "fiyat": 25,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "Şalgam",
+        "fiyat": 40,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      },
+      {
+        "isim": "0.5 LT Su",
+        "fiyat": 10,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      }
+    ]
+  }
 }

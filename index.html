@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Örnektir | Restoran Menüsü</title>
+    <title>Karayaka Kuzu Evi | Restoran Menüsü</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <div class="header-bg-slider">
+            <div class="header-bg-img" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('img/indoor.jpg');"></div>
+            <div class="header-bg-img" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('img/indoor2.jpg');"></div>
+            <div class="header-bg-img" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('img/indoor.jpg');"></div>
+        </div>
         <img class="site-logo" src="img/logo.jpg" alt="Karayaka Kuzu Evi Logo">
         <h1 class="logo">Karayaka Kuzu Evi</h1>
         <p class="slogan">Geleneksel Lezzetler, Modern Sunumlar</p>
@@ -19,6 +24,9 @@
     <nav id="navslider">
         <div class="nav-container" >
             <div class="logo" id="navslider" style="color:white;">Menümüz</div>
+            <div id="kategori-icon-navbar">
+                <!-- Kategori ikonları buraya JS ile gelecek -->
+            </div>
         </div>
     </nav>
     
@@ -27,16 +35,78 @@
     </section>
     
     <footer>
+    <script>
+    // Kategori ikonları ve scroll fonksiyonu
+    const kategoriIkonlari = [
+        { ad: 'Çorbalar', ikon: 'fa-mug-hot' },
+        { ad: 'Ana Yemekler (Kilogram)', ikon: 'fa-drumstick-bite' },
+        { ad: 'Ana Yemekler (Porsiyon)', ikon: 'fa-utensils' },
+        { ad: 'Tatlılar', ikon: 'fa-ice-cream' },
+        { ad: 'İçecekler', ikon: 'fa-glass-water' }
+    ];
+    const navbar = document.getElementById('kategori-icon-navbar');
+    navbar.innerHTML = '';
+    kategoriIkonlari.forEach(kat => {
+        const btn = document.createElement('button');
+        btn.className = 'kategori-icon-btn';
+        btn.title = kat.ad;
+        btn.innerHTML = `<i class='fas ${kat.ikon}'></i>`;
+        btn.onclick = function(){
+            const el = document.querySelector(`[data-kategori-baslik='${kat.ad}']`);
+            if(el) {
+                el.scrollIntoView({behavior:'smooth', block:'start'});
+            }
+        };
+        navbar.appendChild(btn);
+    });
+    </script>
+    <style>
+    #kategori-icon-navbar {
+        display: flex;
+        gap: 1.1rem;
+        justify-content: center;
+        margin-top: 0.7rem;
+        margin-bottom: 0.7rem;
+    }
+    .kategori-icon-btn {
+        background: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.45rem;
+        color: #b22222;
+        box-shadow: 0 2px 8px rgba(178,34,34,0.10);
+        cursor: pointer;
+        transition: background 0.18s, color 0.18s, transform 0.18s;
+    }
+    .kategori-icon-btn:hover {
+        background: #b22222;
+        color: #fff;
+        transform: scale(1.13);
+    }
+    @media (max-width: 900px) {
+        #kategori-icon-navbar { gap: 0.7rem; }
+        .kategori-icon-btn { font-size: 1.1rem; }
+    }
+    @media (max-width: 600px) {
+        #kategori-icon-navbar { gap: 0.4rem; }
+        .kategori-icon-btn { font-size: 0.9rem; }
+    }
+    </style>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Hakkımızda</h3>
-                <p>Örnektir, 2023 yılından beri geleneksel lezzetleri modern sunumlarla buluşturarak misafirlerine unutulmaz bir deneyim yaşatıyor.</p>
+                <p>Karayaka Kuzu Evi, 2023 yılından beri geleneksel lezzetleri modern sunumlarla buluşturarak misafirlerine unutulmaz bir deneyim yaşatıyor.</p>
             </div>
             
             <div class="footer-section">
                 <h3>İletişim</h3>
                 <div class="contact-info">
-                    <i class="fas fa-map-marker-alt"></i> Örnek Mahallesi, Menü Sokak No:15, İstanbul
+                    <i class="fas fa-map-marker-alt"></i> Bahçelievler, Karayaka, 60502 Erbaa/Tokat
                 </div>
                 <div class="contact-info">
                     <i class="fas fa-phone"></i> +90 356 748 57 60
@@ -49,16 +119,14 @@
             <div class="footer-section">
                 <h3>Sosyal Medya</h3>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-yelp"></i></a>
+                    <a href="https://www.facebook.com/p/Karayaka-Kuzuevi-100094031884847/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/karayakakuzuevi/"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
         
         <div class="copyright">
-            &copy; 2025 Karayaka Belediyesi. Tüm hakları saklıdır.
+            &copy; 2025 Said Başara. Tüm hakları saklıdır.
         </div>
     </footer>
     <script src="script.js"></script>
