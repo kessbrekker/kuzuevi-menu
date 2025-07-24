@@ -24,9 +24,6 @@
     <nav id="navslider">
         <div class="nav-container" >
             <div class="logo" id="navslider" style="color:white;">Menümüz</div>
-            <div id="kategori-icon-navbar">
-                <!-- Kategori ikonları buraya JS ile gelecek -->
-            </div>
         </div>
     </nav>
     
@@ -35,68 +32,6 @@
     </section>
     
     <footer>
-    <script>
-    // Kategori ikonları ve scroll fonksiyonu
-    const kategoriIkonlari = [
-        { ad: 'Çorbalar', ikon: 'fa-mug-hot' },
-        { ad: 'Ana Yemekler (Kilogram)', ikon: 'fa-drumstick-bite' },
-        { ad: 'Ana Yemekler (Porsiyon)', ikon: 'fa-utensils' },
-        { ad: 'Tatlılar', ikon: 'fa-ice-cream' },
-        { ad: 'İçecekler', ikon: 'fa-glass-water' }
-    ];
-    const navbar = document.getElementById('kategori-icon-navbar');
-    navbar.innerHTML = '';
-    kategoriIkonlari.forEach(kat => {
-        const btn = document.createElement('button');
-        btn.className = 'kategori-icon-btn';
-        btn.title = kat.ad;
-        btn.innerHTML = `<i class='fas ${kat.ikon}'></i>`;
-        btn.onclick = function(){
-            const el = document.querySelector(`[data-kategori-baslik='${kat.ad}']`);
-            if(el) {
-                el.scrollIntoView({behavior:'smooth', block:'start'});
-            }
-        };
-        navbar.appendChild(btn);
-    });
-    </script>
-    <style>
-    #kategori-icon-navbar {
-        display: flex;
-        gap: 1.1rem;
-        justify-content: center;
-        margin-top: 0.7rem;
-        margin-bottom: 0.7rem;
-    }
-    .kategori-icon-btn {
-        background: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.45rem;
-        color: #b22222;
-        box-shadow: 0 2px 8px rgba(178,34,34,0.10);
-        cursor: pointer;
-        transition: background 0.18s, color 0.18s, transform 0.18s;
-    }
-    .kategori-icon-btn:hover {
-        background: #b22222;
-        color: #fff;
-        transform: scale(1.13);
-    }
-    @media (max-width: 900px) {
-        #kategori-icon-navbar { gap: 0.7rem; }
-        .kategori-icon-btn { font-size: 1.1rem; }
-    }
-    @media (max-width: 600px) {
-        #kategori-icon-navbar { gap: 0.4rem; }
-        .kategori-icon-btn { font-size: 0.9rem; }
-    }
-    </style>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Hakkımızda</h3>
