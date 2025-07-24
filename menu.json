@@ -115,16 +115,16 @@
       {
         "isim": "Hamsiköy Sütlacı",
         "fiyat": 100,
-        "kisiSayisi": null,
-        "kilo": null,
+        "kisiSayisi": "null",
+        "kilo": "null",
         "resim": "img/yemekler/eklenecek.png",
         "goster": true
       },
       {
         "isim": "Kadayıf Sarma",
         "fiyat": 100,
-        "kisiSayisi": null,
-        "kilo": null,
+        "kisiSayisi": "null",
+        "kilo": "null",
         "resim": "img/yemekler/sarma.jpg",
         "goster": false
       }
@@ -237,6 +237,19 @@
       {
         "isim": "0.5 LT Su",
         "fiyat": 10,
+        "kisiSayisi": "null",
+        "kilo": "null",
+        "resim": "img/yemekler/eklenecek.png",
+        "goster": true
+      }
+    ]
+  },
+  "Ek Mezeler": {
+    "sutun": 1,
+    "urunler": [
+      {
+        "isim": "Köy Yoğurdu",
+        "fiyat": 75,
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/eklenecek.png",
