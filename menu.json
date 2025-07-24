@@ -1,0 +1,82 @@
+{
+  "Çorbalar": [
+    {
+      "isim": "Mercimek",
+      "fiyat": 1111,
+      "kisiSayisi": 0,
+      "kilo": 0,
+      "resim": "",
+      "goster": true
+    }
+  ],
+  "Ana Yemekler": [
+    {
+      "isim": "Karayaka Kuzu Pirzola",
+      "fiyat": 1200,
+      "kisiSayisi": 4,
+      "kilo": 1,
+      "resim": "http://localhost:3000/img/yemekler/kuzu.jpg",
+      "goster": true
+    },
+    {
+      "isim": "Tavuk Pirzola",
+      "fiyat": 600,
+      "kisiSayisi": 4,
+      "kilo": 1,
+      "resim": "http://localhost:3000/img/yemekler/tavuk.jpg",
+      "goster": true
+    },
+    {
+      "isim": "Karışık",
+      "fiyat": 1100,
+      "kisiSayisi": 4,
+      "kilo": 1,
+      "resim": "",
+      "goster": true
+    },
+    {
+      "isim": "Köfte",
+      "fiyat": 1000,
+      "kisiSayisi": 4,
+      "kilo": 1,
+      "resim": "img/yemekler/kofte.jpg",
+      "goster": true
+    },
+    {
+      "isim": "Tavuk Kanat",
+      "fiyat": 700,
+      "kisiSayisi": 4,
+      "kilo": 1,
+      "resim": "",
+      "goster": true
+    }
+  ],
+  "Tatlılar": [
+    {
+      "isim": "Hamsiköy Sütlacı",
+      "fiyat": 100,
+      "kisiSayisi": 0,
+      "kilo": 0,
+      "resim": "img/yemekler/sutlac.jpg",
+      "goster": true
+    },
+    {
+      "isim": "Kadayıf Sarma",
+      "fiyat": 100,
+      "kisiSayisi": 0,
+      "kilo": 0,
+      "resim": "img/yemekler/sarma.jpg",
+      "goster": true
+    }
+  ],
+  "İçecekler": [
+    {
+      "isim": "Ayran",
+      "fiyat": 20,
+      "kisiSayisi": 0,
+      "kilo": 0,
+      "resim": "img/mercimek.jpg",
+      "goster": true
+    }
+  ]
+}
