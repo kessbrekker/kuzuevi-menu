@@ -167,7 +167,7 @@
         "fiyat": 120,
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/buyukayran.jpg",
         "goster": true
       },
       {
@@ -175,15 +175,15 @@
         "fiyat": 60,
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/kucukayran.jpg",
         "goster": true
       },
       {
         "isim": "Kapalı Ayran",
         "fiyat": 25,
-        "kisiSayisi": "null",
+        "kisiSayisi": null,
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/kapalıayran.jpg",
         "goster": true
       },
       {
@@ -191,7 +191,7 @@
         "fiyat": 80,
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/kutukola.jpg",
         "goster": true
       },
       {
@@ -199,7 +199,7 @@
         "fiyat": 40,
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/sisekola.jpg",
         "goster": true
       },
       {
@@ -207,7 +207,7 @@
         "fiyat": 80,
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/ltkola.jpg",
         "goster": true
       },
       {
@@ -215,7 +215,7 @@
         "fiyat": 50,
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/meyvesuyu.jpg",
         "goster": true
       },
       {
@@ -223,7 +223,7 @@
         "fiyat": 25,
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/soda.jpg",
         "goster": true
       },
       {
@@ -231,7 +231,7 @@
         "fiyat": 40,
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/salgam.jpg",
         "goster": true
       },
       {
@@ -239,7 +239,7 @@
         "fiyat": 10,
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/su.jpg",
         "goster": true
       }
     ]
