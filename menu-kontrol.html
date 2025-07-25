@@ -310,7 +310,7 @@
             `;
             // Inputlara çevir
             tdIsim.innerHTML = `<input type='text' value='${eski.isim}'>`;
-            tdFiyat.innerHTML = `<input type='number' value='${eski.fiyat}' min='0'> ₺`;
+            tdFiyat.innerHTML = `<input type='text' value='${eski.fiyat}'> ₺`;
             tdKisi.innerHTML = `<input type='number' value='${eski.kisi}' min='1' step='1'>`;
             tdKilo.innerHTML = `<input type='text' value='${eski.kilo}'>`;
             tdResim.innerHTML = `<input type='file' accept='image/*'> <div class='img-preview-box'>${eski.resim ? `<img src='${eski.resim}' class='img-preview' alt='${eski.isim}'>` : '-'}</div>`;
@@ -457,7 +457,7 @@
                     <button class='sira-asagi-btn' title='Aşağı Taşı' disabled>▼</button>
                 </td>
                 <td><input type='text' placeholder='Ürün adı'></td>
-                <td><input type='number' placeholder='Fiyat' min='0'> ₺</td>
+                <td><input type='text' placeholder='Fiyat'> ₺</td>
                 <td><input type='number' placeholder='Kişi' min='1' step='1'></td>
                 <td><input type='text' placeholder='Kilo'></td>
                 <td><input type='file' accept='image/*'> <div class='img-preview-box'>-</div></td>
@@ -573,8 +573,8 @@
                 if (tr.hasAttribute('data-goster')) {
                     goster = tr.getAttribute('data-goster') === 'true';
                 }
-                // Fiyatı sayı olarak kaydet, diğer alanları olduğu gibi bırak
-                urunler.push({isim, fiyat: Number(fiyat), kisiSayisi: kisiSayisi === '' ? null : kisiSayisi, kilo: kilo === '' ? null : kilo, resim, goster});
+                // Fiyatı metin olarak kaydet, her türlü değer yazılabilir
+                urunler.push({isim, fiyat, kisiSayisi: kisiSayisi === '' ? null : kisiSayisi, kilo: kilo === '' ? null : kilo, resim, goster});
             });
             menuData[kategori] = { sutun, urunler };
         });

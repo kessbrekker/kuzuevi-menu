@@ -8,7 +8,7 @@
     "urunler": [
       {
         "isim": "Karayaka Kuzu Pirzola",
-        "fiyat": 1200,
+        "fiyat": "1200",
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/eklenecek.png",
@@ -16,7 +16,7 @@
       },
       {
         "isim": "Karışık",
-        "fiyat": 1100,
+        "fiyat": "1100",
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/eklenecek.png",
@@ -24,7 +24,7 @@
       },
       {
         "isim": "Köfte",
-        "fiyat": 1000,
+        "fiyat": "1000",
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/eklenecek.png",
@@ -32,7 +32,7 @@
       },
       {
         "isim": "Sucuk",
-        "fiyat": 700,
+        "fiyat": "700",
         "kisiSayisi": "null",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/eklenecek.png",
@@ -40,7 +40,7 @@
       },
       {
         "isim": "Tavuk Kanat",
-        "fiyat": 700,
+        "fiyat": "700",
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/eklenecek.png",
@@ -48,7 +48,7 @@
       },
       {
         "isim": "Tavuk Pirzola",
-        "fiyat": 600,
+        "fiyat": "600",
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/eklenecek.png",
@@ -61,7 +61,7 @@
     "urunler": [
       {
         "isim": "Karayaka Kuzu Pirzola",
-        "fiyat": 400,
+        "fiyat": "400",
         "kisiSayisi": "0",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
@@ -69,7 +69,7 @@
       },
       {
         "isim": "Karışık",
-        "fiyat": 350,
+        "fiyat": "350",
         "kisiSayisi": "0",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
@@ -77,7 +77,7 @@
       },
       {
         "isim": "Köfte",
-        "fiyat": 300,
+        "fiyat": "300",
         "kisiSayisi": "0",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
@@ -85,7 +85,7 @@
       },
       {
         "isim": "Sucuk",
-        "fiyat": 300,
+        "fiyat": "300",
         "kisiSayisi": "null",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
@@ -93,7 +93,7 @@
       },
       {
         "isim": "Tavuk Kanat",
-        "fiyat": 275,
+        "fiyat": "275",
         "kisiSayisi": "0",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
@@ -101,7 +101,7 @@
       },
       {
         "isim": "Tavuk Pirzola",
-        "fiyat": 250,
+        "fiyat": "250",
         "kisiSayisi": "0",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
@@ -114,15 +114,15 @@
     "urunler": [
       {
         "isim": "Hamsiköy Sütlacı",
-        "fiyat": 100,
-        "kisiSayisi": "null",
+        "fiyat": "100",
+        "kisiSayisi": null,
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/sutlac.jpg",
         "goster": true
       },
       {
         "isim": "Kadayıf Sarma",
-        "fiyat": 100,
+        "fiyat": "100",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/sarma.jpg",
@@ -135,7 +135,7 @@
     "urunler": [
       {
         "isim": "Büyük Boy Semaver",
-        "fiyat": 200,
+        "fiyat": "200",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/eklenecek.png",
@@ -143,7 +143,7 @@
       },
       {
         "isim": "Orta Boy Semaver",
-        "fiyat": 150,
+        "fiyat": "150",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/eklenecek.png",
@@ -151,7 +151,7 @@
       },
       {
         "isim": "Küçük Boy Semaver",
-        "fiyat": 100,
+        "fiyat": "100",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/eklenecek.png",
@@ -163,32 +163,16 @@
     "sutun": 2,
     "urunler": [
       {
-        "isim": "Büyük Sürahi Ayran",
-        "fiyat": 120,
+        "isim": "Ayran",
+        "fiyat": "120-60-25",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/buyukayran.jpg",
-        "goster": true
-      },
-      {
-        "isim": "Küçük Sürahi Ayran",
-        "fiyat": 60,
-        "kisiSayisi": "null",
-        "kilo": "null",
-        "resim": "img/yemekler/kucukayran.jpg",
-        "goster": true
-      },
-      {
-        "isim": "Kapalı Ayran",
-        "fiyat": 25,
-        "kisiSayisi": null,
-        "kilo": "null",
-        "resim": "img/yemekler/kapalıayran.jpg",
+        "resim": "img/yemekler/ayran.jpg",
         "goster": true
       },
       {
         "isim": "Kutu Kola/Fanta",
-        "fiyat": 80,
+        "fiyat": "80",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/kutukola.jpg",
@@ -196,7 +180,7 @@
       },
       {
         "isim": "Şişe Kola/Fanta",
-        "fiyat": 40,
+        "fiyat": "40",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/sisekola.jpg",
@@ -204,7 +188,7 @@
       },
       {
         "isim": "1 LT Kola/Fanta",
-        "fiyat": 80,
+        "fiyat": "80",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/ltkola.jpg",
@@ -212,7 +196,7 @@
       },
       {
         "isim": "Meyve Suyu/İcetea",
-        "fiyat": 50,
+        "fiyat": "50",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/meyvesuyu.jpg",
@@ -220,7 +204,7 @@
       },
       {
         "isim": "Meyveli/Sade Soda",
-        "fiyat": 25,
+        "fiyat": "25",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/soda.jpg",
@@ -228,7 +212,7 @@
       },
       {
         "isim": "Şalgam",
-        "fiyat": 40,
+        "fiyat": "40",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/salgam.jpg",
@@ -236,7 +220,7 @@
       },
       {
         "isim": "0.5 LT Su",
-        "fiyat": 10,
+        "fiyat": "10",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/su.jpg",
@@ -249,7 +233,7 @@
     "urunler": [
       {
         "isim": "Köy Yoğurdu",
-        "fiyat": 75,
+        "fiyat": "75",
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/eklenecek.png",
