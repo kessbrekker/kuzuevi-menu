@@ -19,7 +19,7 @@
         "fiyat": "1100",
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/karısık.jpg",
         "goster": true
       },
       {
@@ -115,7 +115,7 @@
       {
         "isim": "Hamsiköy Sütlacı",
         "fiyat": "100",
-        "kisiSayisi": null,
+        "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/sutlac.jpg",
         "goster": true
