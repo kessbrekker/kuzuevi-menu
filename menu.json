@@ -11,7 +11,7 @@
         "fiyat": "1200",
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/kilokuzu.jpg",
         "goster": true
       },
       {
@@ -19,7 +19,7 @@
         "fiyat": "1100",
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
-        "resim": "img/yemekler/kar%C4%B1s%C4%B1k.jpg",
+        "resim": "img/yemekler/karısık.png",
         "goster": true
       },
       {
@@ -43,7 +43,7 @@
         "fiyat": "700",
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/kilokanat.png",
         "goster": true
       },
       {
@@ -236,7 +236,15 @@
         "fiyat": "75",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/eklenecek.png",
+        "resim": "img/yemekler/yogurt.jpg",
+        "goster": true
+      },
+      {
+        "isim": "Köy Ekmeği (Bütün)",
+        "fiyat": "40",
+        "kisiSayisi": null,
+        "kilo": "null",
+        "resim": "img/yemekler/ekmek.jpg",
         "goster": true
       }
     ]
