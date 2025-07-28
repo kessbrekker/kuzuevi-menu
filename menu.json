@@ -11,7 +11,7 @@
         "fiyat": "1200",
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
-        "resim": "img/yemekler/kilokuzu.jpg",
+        "resim": "img/yemekler/kilokuzu.png",
         "goster": true
       },
       {
@@ -117,7 +117,7 @@
         "fiyat": "100",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/sutlac.jpg",
+        "resim": "img/yemekler/sutlac.png",
         "goster": true
       },
       {
@@ -125,7 +125,7 @@
         "fiyat": "100",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/sarma.jpg",
+        "resim": "img/yemekler/eklenecek.png",
         "goster": false
       }
     ]
@@ -167,7 +167,7 @@
         "fiyat": "120-60-25",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/ayran.jpg",
+        "resim": "img/yemekler/ayran.png",
         "goster": true
       },
       {
@@ -175,7 +175,7 @@
         "fiyat": "80",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/kutukola.jpg",
+        "resim": "img/yemekler/kutukola.png",
         "goster": true
       },
       {
@@ -183,7 +183,7 @@
         "fiyat": "40",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/sisekola.jpg",
+        "resim": "img/yemekler/sisekola.png",
         "goster": true
       },
       {
@@ -191,7 +191,7 @@
         "fiyat": "80",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/ltkola.jpg",
+        "resim": "img/yemekler/ltkola.png",
         "goster": true
       },
       {
@@ -199,7 +199,7 @@
         "fiyat": "50",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/meyvesuyu.jpg",
+        "resim": "img/yemekler/meyvesuyu.png",
         "goster": true
       },
       {
@@ -207,7 +207,7 @@
         "fiyat": "25",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/soda.jpg",
+        "resim": "img/yemekler/soda.png",
         "goster": true
       },
       {
@@ -215,7 +215,7 @@
         "fiyat": "40",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/salgam.jpg",
+        "resim": "img/yemekler/salgam.png",
         "goster": true
       },
       {
@@ -223,7 +223,7 @@
         "fiyat": "10",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/su.jpg",
+        "resim": "img/yemekler/su.png",
         "goster": true
       }
     ]
@@ -236,7 +236,7 @@
         "fiyat": "75",
         "kisiSayisi": "null",
         "kilo": "null",
-        "resim": "img/yemekler/yogurt.jpg",
+        "resim": "img/yemekler/yogurt.png",
         "goster": true
       },
       {
@@ -244,7 +244,7 @@
         "fiyat": "40",
         "kisiSayisi": null,
         "kilo": "null",
-        "resim": "img/yemekler/ekmek.jpg",
+        "resim": "img/yemekler/ekmek.png",
         "goster": true
       }
     ]
