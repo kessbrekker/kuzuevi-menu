@@ -11,7 +11,7 @@
         "fiyat": "1200",
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
-        "resim": "img/yemekler/kilokuzu.png",
+        "resim": "img/yemekler/kilokuzuthmb.png",
         "goster": true
       },
       {
@@ -242,7 +242,7 @@
       {
         "isim": "Köy Ekmeği (Bütün)",
         "fiyat": "40",
-        "kisiSayisi": null,
+        "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/ekmek.png",
         "goster": true
