@@ -126,7 +126,7 @@
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": false
+        "goster": true
       }
     ]
   },
