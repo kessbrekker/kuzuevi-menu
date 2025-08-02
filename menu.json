@@ -90,7 +90,7 @@
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
         "goster": true,
-        "highlight": false
+        "highlight": true
       },
       {
         "isim": "Sucuk",
