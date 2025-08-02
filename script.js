@@ -25,6 +25,9 @@ async function menuYukle() {
             urunler.forEach(urun => {
                 const li = document.createElement('li');
                 li.className = 'menu-list-item';
+                if (urun.highlight === true) {
+                    li.classList.add('highlighted');
+                }
                 if (urun.resim) {
                     li.style.backgroundImage = `url('${urun.resim}')`;
                 }

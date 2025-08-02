@@ -1,3 +1,15 @@
+/* Highlighted ürünler için sarı ışık efekti */
+.menu-list-item.highlighted {
+    box-shadow: 0 0 32px 0 rgba(255, 215, 0, 0.55), 0 4px 18px rgba(0,0,0,0.10);
+    border: 2.5px solid #ffe066;
+    background-blend-mode: lighten;
+    position: relative;
+}
+/* Responsive ve hover için de sarı ışık daha belirgin olsun */
+.menu-list-item.highlighted:hover {
+    box-shadow: 0 0 48px 0 rgba(255, 215, 0, 0.75), 0 8px 32px rgba(129,22,42,0.13);
+    border-color: #ffd700;
+}
 /* Temizlenmiş ve sadeleştirilmiş style.css */
 :root {
     --primary-color: rgb(129, 22, 42);

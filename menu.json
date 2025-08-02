@@ -12,7 +12,8 @@
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/kilokuzuthmb.png",
-        "goster": true
+        "goster": true,
+        "highlight": true
       },
       {
         "isim": "Karışık    (Kuzu-Köfte-Tavuk)",
@@ -20,7 +21,8 @@
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/karısık.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       },
       {
         "isim": "Köfte",
@@ -28,7 +30,8 @@
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       },
       {
         "isim": "Sucuk",
@@ -36,7 +39,8 @@
         "kisiSayisi": "null",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       },
       {
         "isim": "Tavuk Kanat",
@@ -44,7 +48,8 @@
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/kilokanat.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       },
       {
         "isim": "Tavuk Pirzola",
@@ -52,7 +57,8 @@
         "kisiSayisi": "0",
         "kilo": "1 Kilogram",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       }
     ]
   },
@@ -65,7 +71,8 @@
         "kisiSayisi": "0",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": true
       },
       {
         "isim": "Karışık",
@@ -73,7 +80,8 @@
         "kisiSayisi": "0",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       },
       {
         "isim": "Köfte",
@@ -81,7 +89,8 @@
         "kisiSayisi": "0",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       },
       {
         "isim": "Sucuk",
@@ -89,7 +98,8 @@
         "kisiSayisi": "null",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       },
       {
         "isim": "Tavuk Kanat",
@@ -97,7 +107,8 @@
         "kisiSayisi": "0",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       },
       {
         "isim": "Tavuk Pirzola",
@@ -105,7 +116,8 @@
         "kisiSayisi": "0",
         "kilo": "1 Porsiyon",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       }
     ]
   },
@@ -118,7 +130,8 @@
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/sutlac.png",
-        "goster": true
+        "goster": true,
+        "highlight": true
       },
       {
         "isim": "Kadayıf Sarma",
@@ -126,7 +139,8 @@
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       }
     ]
   },
@@ -139,7 +153,8 @@
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       },
       {
         "isim": "Orta Boy Semaver",
@@ -147,7 +162,8 @@
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       },
       {
         "isim": "Küçük Boy Semaver",
@@ -155,7 +171,8 @@
         "kisiSayisi": "null",
         "kilo": "null",
         "resim": "img/yemekler/eklenecek.png",
-        "goster": true
+        "goster": true,
+        "highlight": false
       }
     ]
   },
